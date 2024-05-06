@@ -2,18 +2,36 @@
 
 nav {
   width: 100%;
+  display: flex; /* Added */
+  justify-content: center; /* Added */
+  background-color: #F9DBBD;
 }
 
 nav ul {
-    left:-50%
+  width: 50%;
+  height: 40px;
+  /* Removed absolute positioning and left: 50% */
+  /* Removed transform: translate(-50%, -50%); */
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex; /* Added */
+  justify-content: center; /* Added */
+  align-items: center; /* Added */
+  background-color: #FFA5AB;
 }
 
 nav ul li {
-  display: inline-block;
-  margin-right: 20px;
+  /* Removed inline-block and margin-right */
+  /* Added margin-right to create space between list items */
+  /* Adjusted align-items from center to baseline */
+  display: flex; /* Added */
+  align-items: baseline; /* Changed from center to baseline */
+  margin-right: 20px; /* Adjusted margin */
+  color: #DA627D;
+  
 }
 
 nav ul li ul {
@@ -21,10 +39,13 @@ nav ul li ul {
   position: absolute;
   background-color: #f9f9f9;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  width: 10%;
+  height: auto;
 }
 
 nav ul li:hover ul {
   display: block;
+  color: #fff;
 }
 
 nav ul li ul li {
@@ -40,4 +61,14 @@ nav ul li ul li a {
 
 nav ul li ul li a:hover {
   background-color: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 80%; /* Adjust width for smaller screens */
+  }
+  
+  nav ul li {
+    margin-right: 10px; /* Adjust margin-right for smaller screens */
+  }
 }
